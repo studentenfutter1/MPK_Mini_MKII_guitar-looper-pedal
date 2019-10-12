@@ -4,7 +4,19 @@ import pygame as pg
 import pygame.midi as midi
 import pyautogui
 import threading
-import subprocess
+import sounddevice as sd
+import numpy as np
+
+
+# globals
+duration = 60  # secs
+fs = 44100
+sd.default.samplerate = fs
+sd.default.channels = 2
+myRecording = sd.rec(int(duration * fs))
+
+
+# classes
 
 class midiController:
     def __init__(self):
