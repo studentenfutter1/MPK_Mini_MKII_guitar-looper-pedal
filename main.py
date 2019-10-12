@@ -1,3 +1,5 @@
+# standalone
+
 import pygame as pg
 import pygame.midi as midi
 import pyautogui
@@ -46,12 +48,7 @@ def pollMidi():
                         mpk2mini.pads[i].status = 0
 
 
-def startAudacity():
-    subprocess.Popen([r"C:\Program Files (x86)\Audacity\audacity.exe"])
-
-
 def initAll():
-    startAudacity()
     pyautogui.PAUSE = 0
     pyautogui.FAILSAFE = True
 
@@ -100,19 +97,6 @@ def controlFunction():
                     pyautogui.press('space')  # stop recording
                     pg.time.wait(500)
 
-                #midi_in.read(1000)
-                #pg.time.wait(00)
-
-                '''
-                elif mpk2mini.pads[2].status == 1:  # replay
-                    pyautogui.hotkey('shift', 'space')
-
-                elif mpk2mini.pads[1].status == 1:  # stop
-                    pyautogui.press('space')  # stop recording
-
-                elif mpk2mini.pads[0].status == 1:  # delete
-                    pyautogui.press('y') 
-                '''
 
     except KeyboardInterrupt:
         print("\nkeyboard interrupt")
